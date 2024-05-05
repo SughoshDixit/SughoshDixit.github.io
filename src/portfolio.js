@@ -26,7 +26,7 @@ const greeting = {
     "🔍 Senior Analyst at Oracle | Data Science Enthusiast | Masters in Data Science & Engineering |  BITS Pilani | Consider me your go-to person for building any kind of applications, capable of single-handedly build cool applications🤷‍♂️"
   ),
   resumeLink:
-    "https://drive.google.com/file/d/18nkv7Pf2aCeRaHfjskX24ZvmsZTyQvW_/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1Do_Aj8ruhq64P7Enq4giaJhtXpRcsHG2/view?usp=drive_link", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -293,10 +293,10 @@ const blogSection = {
         "Here's a small article on why I chose to support Liverpool F C back when they weren't that great"
     },
     {
-      url: "https://sughoshdixit.blogspot.com/2019/09/owasp-zap.html",
-      title: "How secure are web apps",
+      url: "https://sughoshblog.vercel.app/blogs/gratitude-for-being-born-in-the-ancient-civilization-of-bharatavarsha",
+      title: "Ancient Civilization of Bharatavarsha",
       description:
-        "Read this article to learn on how we can analyze the security of our web apps"
+        "Here's a small article to offer gratitude for Being Born in the Ancient Civilization of Bharatavarsha"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -323,12 +323,12 @@ const talkSection = {
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("Songs 🎙️"),
-  subtitle: "Bhajan",
+  title: emoji("A Musical Performance 🎙️"),
+  subtitle: "Namasankeertanam",
 
   // Please Provide with Your Podcast embedded Link
   podcast: [
-    "https://www.youtube.com/embed/UA12v_Y53Go"
+    "https://youtu.be/dn7jrFLbuJw?si=b2lcX6NcUrkIR-Xg"
   ],
   display: true // Set false to hide this section, defaults to true
 };
