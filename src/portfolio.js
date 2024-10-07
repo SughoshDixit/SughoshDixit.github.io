@@ -7,10 +7,11 @@ import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your
 
 // Splash Screen
 
+
 const splashScreen = {
   enabled: true, // set false to disable splash screen
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 2500 // Set animation duration as per your animation
 };
 
 // Summary And Greeting Section
@@ -23,7 +24,7 @@ const greeting = {
   username: "Sughosh Dixit",
   title: "Namaste, Sughosh here",
   subTitle: emoji(
-    "🔍 Senior Analyst at Oracle | Data Science Enthusiast | Masters in Data Science & Engineering |  BITS Pilani | Consider me your go-to person for building any kind of applications, capable of single-handedly build cool applications🤷‍♂️"
+    "🔍 Data Scientist at Oracle Financial Crime and Compliance Management | Masters in Data Science & Engineering from BITS Pilani | Eager to solve global challenges with AI/ML! 🚀 Let's build data-driven solutions for a better tomorrow 🌍"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1Do_Aj8ruhq64P7Enq4giaJhtXpRcsHG2/view?usp=drive_link", // Set to empty to hide the button
@@ -49,7 +50,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "Coding by profession, Footballer by passion, Civilizationalist by ideology",
+  subTitle: "Coding by profession 💼, Footballer by passion, Civilizationalist by ideology🔎",
   skills: [
     emoji(
       "⚡ Offensive Footballer - I believe scoring goals is the best feeling"
@@ -66,48 +67,15 @@ const skillsSection = {
 https://fontawesome.com/icons?d=gallery */
 
 softwareSkills: [
-  {
-    skillName: "html-5",
-    fontAwesomeClassname: "fab fa-html5"
-  },
-  {
-    skillName: "css3",
-    fontAwesomeClassname: "fab fa-css3-alt"
-  },
-  {
-    skillName: "saas",
-    fontAwesomeClassname: "fab fa-sass"
-  },
-  {
-    skillName: "JavaScript",
-    fontAwesomeClassname: "fab fa-js"
-  },
-  {
-    skillName: "reactjs",
-    fontAwesomeClassname: "fab fa-react"
-  },
-  {
-    skillName: "nodejs",
-    fontAwesomeClassname: "fab fa-node"
-  },
-  {
-    skillName: "npm",
-    fontAwesomeClassname: "fab fa-npm"
-  },
-  {
-    skillName: "sql-database",
-    fontAwesomeClassname: "fas fa-database"
-  },
-  {
-    skillName: "python",
-    fontAwesomeClassname: "fab fa-python"
-  },
-  {
-    skillName: "football",
-    fontAwesomeClassname: "fas fa-futbol"
-  }
-],
-display: true // Set false to hide this section, defaults to true
+  { skillName: "python", fontAwesomeClassname: "fab fa-python" },
+    { skillName: "sql-database", fontAwesomeClassname: "fas fa-database" },
+    { skillName: "reactjs", fontAwesomeClassname: "fab fa-react" },
+    { skillName: "nodejs", fontAwesomeClassname: "fab fa-node" },
+    { skillName: "npm", fontAwesomeClassname: "fab fa-npm" },
+    { skillName: "oracle", fontAwesomeClassname: "fas fa-database" }, // Reflects Oracle Stack Usage
+    { skillName: "Football", fontAwesomeClassname: "fas fa-futbol" }
+  ],
+  display: true
 };
 
 // Education Section
@@ -120,9 +88,9 @@ const educationInfo = {
       logo: require("./assets/images/harvardLogo.png"),
       subHeader: "Master of Technology in Data Science and Engineering",
       duration: "September 2021 - September 2023",
-      desc: "Hustling studies with work",
+      desc: "Hustled through work and studies with a focus on AI-driven projects",
       descBullets: [
-        "Working on some very interesting projects, collaborating with highly motivated group of members"
+        "Collaborated on cutting-edge AI/ML models"
       ]
     },
     {
@@ -130,8 +98,8 @@ const educationInfo = {
       logo: require("./assets/images/BIT.jfif"),
       subHeader: "Bachelor of Technology in Information Science and Engineering",
       duration: "September 2016 - April 2020",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Experienced some up-skilling and rewarding internships and hackathons during this time"]
+      desc: "Top 10% in program, developing deep foundations in engineering",
+      descBullets: ["Worked on impactful internships and hackathons"]
     }
   ]
 };
@@ -141,18 +109,9 @@ const educationInfo = {
 const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "80%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "80%"
-    }
+    { Stack: "Data Science/ML", progressPercentage: "90%" },
+    { Stack: "Programming", progressPercentage: "85%" },
+    { Stack: "Data Analysis/Visualization", progressPercentage: "85%" }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
@@ -184,8 +143,20 @@ const workExperiences = {
       role: "Senior Technical Cloud Analyst",
       company: "Oracle",
       companylogo: require("./assets/images/oracle.jfif"),
-      date: "September 2020 – Present",
-      desc: "Presently working on Oracle Cloud HCM in a Automotive based client project as SQL Reports developer dealing mainly on Data Extraction and deriving Data Insights on the extracted data."
+      date: "September 2020 – September 2024",
+      desc: "Led Data Extraction and SQL Reports for Oracle Cloud HCM projects"
+    },
+    {
+      role: "Data Scientist",
+      company: "Oracle Financial Crime and Compliance Management",
+      companylogo: require("./assets/images/oracle.jfif"),
+      date: "October 2024 – Present",
+      desc: "Building Machine Learning models to combat financial crimes and optimize Anti-Money Laundering efforts. 🌐💼",
+      descBullets: [
+        "Analyzing financial data for fraud detection",
+        "Developing predictive models to detect suspicious transactions",
+        "Collaborating with cross-functional teams for risk mitigation"
+      ]
     }
   ]
 };
@@ -202,7 +173,7 @@ const openSource = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "CREATING IMPACT WITH DATA-DRIVEN SOLUTIONS",
   projects: [
     {
       image: require("./assets/images/printalytix.png"),
@@ -290,13 +261,13 @@ const blogSection = {
       url: "https://sughoshdixit.blogspot.com/p/being-ardent-liverpool-fan-i-can-tell.html",
       title: "Do you watch football?",
       description:
-        "Here's a small article on why I chose to support Liverpool F C back when they weren't that great"
+        "A reflection on why I chose to support Liverpool, even when they weren't at their peak."
     },
     {
       url: "https://sughoshblog.vercel.app/blogs/gratitude-for-being-born-in-the-ancient-civilization-of-bharatavarsha",
       title: "Ancient Civilization of Bharatavarsha",
       description:
-        "Here's a small article to offer gratitude for Being Born in the Ancient Civilization of Bharatavarsha"
+        "Sharing thoughts on the timeless heritage of Bharat."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -324,19 +295,17 @@ const talkSection = {
 
 const podcastSection = {
   title: emoji("A Musical Performance 🎙️"),
-  subtitle: "Namasankeertanam",
-
-  // Please Provide with Your Podcast embedded Link
+  subtitle: "Engaging in the tradition of Namasankeertanam",
   podcast: [
-    "https://youtu.be/dn7jrFLbuJw?si=b2lcX6NcUrkIR-Xg"
+    "https://www.youtube.com/embed/k1ZPw5CVWyk?si=F5aTI5dXNR7Xdnvi"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all!  😬 ",
+    "Let's Collaborate and Build Innovative Solutions!😬 ",
   number: "+91-8310080859",
   email_address: "sughoshpdixit@gmail.com"
 };
@@ -345,7 +314,7 @@ const contactInfo = {
 
 const twitterDetails = {
   userName: "PSughosh", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer

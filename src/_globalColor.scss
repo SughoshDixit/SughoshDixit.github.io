@@ -49,12 +49,12 @@ $darkBoxShadow2: #ffffff;
 
 // linear gradients
 $experienceCardBlurredDivLG: linear-gradient(
-  rgba(0, 0, 0, 0.4),
-  rgba(0, 0, 0, 0.2)
-);
+  rgba(45, 151, 255, 0.4),
+  rgba(81, 45, 255, 0.4)
+); // Electric blue to neon purple gradient for card highlights
 $experienceCardBannerLG: linear-gradient(
-  rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.5)
+  rgba(45, 151, 255, 0.7),
+  rgba(81, 45, 255, 0.5)
 );
 
 // borders
