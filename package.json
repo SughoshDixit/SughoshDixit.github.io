@@ -50,7 +50,7 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "gh-pages": "^6.1.1",
     "prettier": "^2.3.1"
   }
