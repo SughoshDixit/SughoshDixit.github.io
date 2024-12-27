@@ -4,6 +4,9 @@ process = require("process");
 require("dotenv").config();
 
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+if (!GITHUB_TOKEN) {
+  throw new Error("GitHub Token is not defined. Please set REACT_APP_GITHUB_TOKEN in your .env file.");
+}
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const USE_GITHUB_DATA = process.env.USE_GITHUB_DATA;
 const MEDIUM_USERNAME = process.env.MEDIUM_USERNAME;
@@ -72,6 +75,9 @@ if (USE_GITHUB_DATA === "true") {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
+      console.error("Request Failed:", ERR.requestFailed);
+      console.error("Response Headers:", res.headers);
+      res.on("data", chunk => console.error("Error Response Body:", chunk.toString()));
       throw new Error(ERR.requestFailed);
     }
 
@@ -87,6 +93,7 @@ if (USE_GITHUB_DATA === "true") {
   });
 
   req.on("error", error => {
+    console.error("Request Error:", error);
     throw error;
   });
 

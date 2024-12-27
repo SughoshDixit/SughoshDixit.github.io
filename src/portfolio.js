@@ -166,7 +166,7 @@ To know how to get github key look at readme.md */
 
 const openSource = {
   showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
@@ -294,10 +294,10 @@ const talkSection = {
 // Podcast Section
 
 const podcastSection = {
-  title: emoji("A Musical Performance 🎙️"),
-  subtitle: "Engaging in the tradition of Namasankeertanam",
+  title: emoji("An AI Generated Introduction Video 🎙️"),
+  subtitle: "My very own AI clone in Video",
   podcast: [
-    "https://www.youtube.com/embed/k1ZPw5CVWyk?si=F5aTI5dXNR7Xdnvi"
+    "https://www.youtube.com/embed/rrbSLCis0QY?si=EGn03BX5qSMNQL-o"
   ],
   display: true
 };
