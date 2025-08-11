@@ -1,4 +1,4 @@
-/* Change this file to get your personal Portfolio */
+e/* Change this file to get your personal Portfolio */
 
 // To change portfolio colors globally go to the  _globalColor.scss file
 
@@ -179,6 +179,8 @@ const bigProjects = {
       image: require("./assets/images/printalytix.png"),
       projectName: "Printalytix",
       projectDesc: "",
+            category: "3D Printing",
+
       footerLink: [
         {
           name: "Visit Website",
@@ -190,6 +192,8 @@ const bigProjects = {
     {
       image: require("./assets/images/siemens.jfif"),
       projectName: "Siemens",
+            category: "Industrial Automation",
+
       projectDesc: "",
       footerLink: [
         {
