@@ -1,0 +1,295 @@
+.github-projects-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.github-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.github-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.github-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.github-repos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.github-repo-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.github-repo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.repo-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+}
+
+.repo-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.repo-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.repo-stars,
+.repo-forks {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.repo-description {
+  margin: 0.6rem 0;
+  line-height: 1.4;
+  opacity: 0.9;
+  font-size: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6rem 0;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.language-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.repo-updated {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.repo-footer {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.view-repo-btn,
+.view-live-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex: 1;
+  text-align: center;
+  min-width: 80px;
+}
+
+.view-repo-btn:hover,
+.view-live-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.view-live-btn {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.view-live-btn:hover {
+  background: rgba(255, 215, 0, 0.3);
+}
+
+.github-footer {
+  margin-top: 2rem;
+}
+
+.view-all-repos {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+.view-all-repos:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.loading,
+.error {
+  font-size: 1.2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+// Dark mode support
+.dark-mode .github-projects-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.dark-mode .github-repo-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .github-repo-card:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+// Responsive design
+@media (max-width: 1200px) {
+  .github-repos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .github-container h2 {
+    font-size: 2.2rem;
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .repo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .repo-stats {
+    margin-top: 0.4rem;
+  }
+  
+  .repo-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  
+  .repo-footer {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .view-repo-btn,
+  .view-live-btn {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-container {
+    padding: 0 15px;
+  }
+  
+  .github-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .github-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .github-repos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .github-repo-card {
+    padding: 0.8rem;
+  }
+  
+  .github-repo-card h3 {
+    font-size: 0.95rem;
+  }
+  
+  .github-repo-card p {
+    font-size: 0.8rem;
+  }
+}

@@ -1,7 +1,85 @@
-@import "../_globalColor";
+@import "../_globalColor.scss";
+
+/* Multi-Identity Theme for Main Container */
+.main-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(85, 25, 139, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(0, 122, 204, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(34, 139, 34, 0.02) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
 
 .dark-mode {
   background-color: $darkBackground;
   color: white;
-  transition: "0.1s";
+  transition: all 0.3s ease;
+}
+
+.dark-mode .main-container::before {
+  background:
+    radial-gradient(circle at 15% 25%, rgba(85, 25, 139, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(0, 122, 204, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(34, 139, 34, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+}
+
+/* Identity Section Styling */
+.identity-section {
+  position: relative;
+  padding: 20px 0;
+}
+
+.identity-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, $originalPurple 0%, $dataScienceBlue 33%, $footballGreen 66%, $musicianGold 100%);
+  border-radius: 2px;
+}
+
+/* Enhanced Card Styling for Multi-Identity Theme */
+.identity-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+  border: 1px solid rgba(108, 117, 125, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.identity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .identity-card {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(33, 37, 41, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Identity Theme */
+@media (max-width: 768px) {
+  .identity-section {
+    padding: 15px 0;
+  }
+
+  .identity-section::after {
+    width: 60px;
+    height: 2px;
+  }
 }

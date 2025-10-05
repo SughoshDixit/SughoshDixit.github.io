@@ -1,90 +1,105 @@
-/* Change colors in this file to style to your needs on a global level. 
-Certain colors are used for different and multiply types of elements. 
-For greater control over colors visit each components .scss file. */
+/* Multi-Identity Theme: Data Scientist | Musician | Footballer | Indian Nationalist
+Enhanced color palette with original purple theme base */
 
-// button colors
-$buttonColor: #55198b;
-$buttonHover: #8c43ce;
+/* Primary Identity Colors */
+$dataScienceBlue: #007ACC;      // Microsoft/Tech Blue
+$originalPurple: #55198b;       // Original portfolio purple
+$footballGreen: #228B22;        // Grass Green
+$musicianGold: #FFD700;         // Gold for music awards/achievement
+
+/* Secondary Colors */
+$purpleHover: #8c43ce;          // Original purple hover
+$dataGreen: #28A745;            // Data visualization green
+$musicRed: #8B0000;             // Deep red for musical passion
+$accentOrange: #FF6B35;         // Warm accent color
+
+// button colors - Using original purple theme
+$buttonColor: $originalPurple;
+$buttonHover: $purpleHover;
 $topButtonHover: #000;
 
-// text colors light theme
-$titleColor: #000000;
-$textColor: #000000;
-$subTitle: #868e96;
-$cardSubtitle: #666666;
-$talkCardSubTitle: #7f8287;
-$blogCardTitleColor: #262626;
+// text colors light theme - Enhanced contrast
+$titleColor: #1a1a1a;
+$textColor: #2c3e50;
+$subTitle: #7f8c8d;
+$cardSubtitle: #5a6c7d;
+$talkCardSubTitle: #6c757d;
+$blogCardTitleColor: #2c3e50;
 
 // text color dark theme
 $textColorDark: #ffffff;
 
-// toggle switch colors
-$toggleCheck: #2196f3;
-$toggleSwitchSliderBG: #ccc;
+// toggle switch colors - Data Science Blue
+$toggleCheck: $dataScienceBlue;
+$toggleSwitchSliderBG: #e9ecef;
 
-// githubRepo specific colors
-$githubRepoCardLanguageColorBG: #0000ff;
-$githubRepoCardColor: rgb(88, 96, 105);
-$githubRepoCardRepoCardStatsColor: rgb(106, 115, 125);
-$githubRepoCardRepoNameColor: rgb(36, 41, 46);
-$githubProfileCardLocationTS: #ffebcd;
-$githubProfileCardBorder: #6c63ff;
+// githubRepo specific colors - Tech focused
+$githubRepoCardLanguageColorBG: $dataScienceBlue;
+$githubRepoCardColor: #495057;
+$githubRepoCardRepoCardStatsColor: #6c757d;
+$githubRepoCardRepoNameColor: #212529;
+$githubProfileCardLocationTS: #fff8e1;
+$githubProfileCardBorder: $dataScienceBlue;
 
-// light background colors
-$lightBackground1: #fff;
-$lightBackground2: rgb(255, 255, 255);
-$lightBackground3: #f5f2f4;
-$blogCardContainerColor: #586069;
+// light background colors - Clean and modern
+$lightBackground1: #ffffff;
+$lightBackground2: #f8f9fa;
+$lightBackground3: #e9ecef;
+$blogCardContainerColor: #495057;
 // dark background colors
-$darkBackground: #171c28;
+$darkBackground: #1a1a1a;
 
 // light theme box shadows
-$lightBoxShadowDark: rgba(0, 0, 0, 0.2);
-$lightBoxShadow: rgba(0, 0, 0, 0.1);
-$lightBoxShadowDarker: rgba(0, 0, 0, 0.3);
+$lightBoxShadowDark: rgba(0, 0, 0, 0.15);
+$lightBoxShadow: rgba(0, 0, 0, 0.08);
+$lightBoxShadowDarker: rgba(0, 0, 0, 0.25);
 
 // dark theme box shadows
-$darkBoxShadow: #d9dbdf;
+$darkBoxShadow: #e9ecef;
 $darkBoxShadow2: #ffffff;
 
-// linear gradients
+// linear gradients - Multi-identity inspired with original purple
 $experienceCardBlurredDivLG: linear-gradient(
-  rgba(45, 151, 255, 0.4),
-  rgba(81, 45, 255, 0.4)
-); // Electric blue to neon purple gradient for card highlights
+  135deg,
+  rgba($dataScienceBlue, 0.3),
+  rgba($originalPurple, 0.2),
+  rgba($footballGreen, 0.3)
+);
 $experienceCardBannerLG: linear-gradient(
-  rgba(45, 151, 255, 0.7),
-  rgba(81, 45, 255, 0.5)
+  135deg,
+  rgba($musicianGold, 0.4),
+  rgba($originalPurple, 0.3),
+  rgba($dataGreen, 0.4)
 );
 
-// borders
-$progressBarBackground: rgb(243, 239, 239);
-$lightBorder1: rgba(211, 211, 211, 0.397);
-$educationCardBorder: #a9a7f9;
+// borders - Subtle and elegant
+$progressBarBackground: #e9ecef;
+$lightBorder1: rgba(108, 117, 125, 0.2);
+$educationCardBorder: $dataScienceBlue;
 
-// hovers
-$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.2);
-$blogCardHoverSmallColor: rgba(255, 255, 255, 0.8);
-$headerHoverBG: #f4f4f4;
-$contactDetailHoverTS: #b5b5b5;
+// hovers - Smooth transitions
+$achievementCertificateCardHoverDark: rgba(255, 255, 255, 0.15);
+$blogCardHoverSmallColor: rgba(255, 255, 255, 0.9);
+$headerHoverBG: #f8f9fa;
+$contactDetailHoverTS: #adb5bd;
 
-// misc backgrounds
-$progressBarSpanBG: #aaa5ff;
+// misc backgrounds - Identity-themed with original purple
+$progressBarSpanBG: $originalPurple;
 $iconBackground: #333;
-$appHeaderBG: #282c34;
+$appHeaderBG: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 
-// misc colors
-$skillsColor: #645beb;
-$appLink: #09d3ac;
+// misc colors - Multi-purpose
+$skillsColor: $dataScienceBlue;
+$appLink: $originalPurple;
 
-// social media icons
-$faceBook: #3b5998;
-$linkedin: #0e76a8;
+// social media icons - Updated with identity theme
+$faceBook: #1877f2;
+$linkedin: #0077b5;
 $github: #333;
 $gitlab: #fca326;
 $google: #ea4335;
 $twitter: #1da1f2;
 $medium: #000;
 $stackoverflow: #f48024;
-$instagram: #c13584;
+$instagram: #e4405f;
 $kaggle: #20beff;

@@ -1,0 +1,141 @@
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  
+  &.small {
+    padding: 1rem;
+    
+    .spinner {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .loading-text {
+      font-size: 0.8rem;
+    }
+  }
+  
+  &.medium {
+    padding: 2rem;
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .loading-text {
+      font-size: 1rem;
+    }
+  }
+  
+  &.large {
+    padding: 3rem;
+    
+    .spinner {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .loading-text {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .spinner {
+    position: relative;
+    margin-bottom: 1rem;
+    
+    .spinner-ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      
+      &:nth-child(1) {
+        border-top-color: #667eea;
+        animation-delay: 0s;
+      }
+      
+      &:nth-child(2) {
+        border-right-color: #764ba2;
+        animation-delay: 0.2s;
+      }
+      
+      &:nth-child(3) {
+        border-bottom-color: #4CAF50;
+        animation-delay: 0.4s;
+      }
+    }
+  }
+  
+  .loading-text {
+    color: #666;
+    font-weight: 500;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  &.primary {
+    .spinner-ring {
+      &:nth-child(1) {
+        border-top-color: #667eea;
+      }
+      
+      &:nth-child(2) {
+        border-right-color: #764ba2;
+      }
+      
+      &:nth-child(3) {
+        border-bottom-color: #4CAF50;
+      }
+    }
+  }
+  
+  &.secondary {
+    .spinner-ring {
+      &:nth-child(1) {
+        border-top-color: #f44336;
+      }
+      
+      &:nth-child(2) {
+        border-right-color: #ff9800;
+      }
+      
+      &:nth-child(3) {
+        border-bottom-color: #2196f3;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Dark mode support
+.dark-mode .loading-spinner {
+  .loading-text {
+    color: #bdc3c7;
+  }
+}
+

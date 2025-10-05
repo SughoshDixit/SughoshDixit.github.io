@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@import "../../_globalColor.scss";
 
 .skills-main-div {
   display: flex;
@@ -8,6 +8,30 @@
 
 .skills-text-div {
   margin-left: 50px;
+}
+
+.skills-text {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skills-text-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.skills-text-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .skills-main-div > * {
@@ -51,7 +75,13 @@
     margin: 20px;
   }
   .skills-text {
-    font-size: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .skills-text-item {
+    font-size: 14px;
+    padding: 0.8rem;
   }
   .skills-text-subtitle {
     font-size: 16px;
@@ -60,5 +90,17 @@
   .skills-image-div {
     /* display: none; */
     order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-text {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .skills-text-item {
+    font-size: 13px;
+    padding: 0.6rem;
   }
 }

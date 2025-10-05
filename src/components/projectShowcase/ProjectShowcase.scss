@@ -1,0 +1,381 @@
+.project-showcase {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  
+  .showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+    }
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    
+    .filter-btn {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      &.active {
+        background: white;
+        color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      
+      .project-overlay {
+        opacity: 1;
+      }
+    }
+    
+    .project-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        
+        .project-actions {
+          display: flex;
+          gap: 1rem;
+          
+          .view-btn,
+          .external-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: #667eea;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            
+            &:hover {
+              transform: scale(1.1);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      
+      .project-category {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .project-description {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+      
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        
+        .tech-tag {
+          background: rgba(255, 255, 255, 0.2);
+          padding: 0.3rem 0.8rem;
+          border-radius: 15px;
+          font-size: 0.8rem;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+  
+  // Project Modal
+  .project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+    
+    .modal-content {
+      background: white;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      color: #333;
+      
+      .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #f44336;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: #d32f2f;
+          transform: scale(1.1);
+        }
+      }
+      
+      .modal-image {
+        height: 300px;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .modal-info {
+        padding: 2rem;
+        
+        h2 {
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+        
+        .modal-category {
+          color: #666;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 0.9rem;
+        }
+        
+        .modal-description {
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+        
+        .modal-tech {
+          margin-bottom: 2rem;
+          
+          h4 {
+            margin-bottom: 1rem;
+            color: #333;
+          }
+          
+          .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            
+            .tech-tag {
+              background: #667eea;
+              color: white;
+              padding: 0.5rem 1rem;
+              border-radius: 20px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+        
+        .modal-actions {
+          .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              background: #5a6fd8;
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dark mode support
+.dark-mode .project-showcase {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  
+  .project-modal .modal-content {
+    background: #2c3e50;
+    color: white;
+    
+    .modal-info {
+      h2 {
+        color: white;
+      }
+      
+      .modal-category {
+        color: #bdc3c7;
+      }
+      
+      .modal-tech h4 {
+        color: white;
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .project-showcase {
+    padding: 2rem 0;
+    
+    .showcase-container {
+      padding: 0 1rem;
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+    
+    .filter-buttons {
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      
+      .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .project-card {
+      .project-content {
+        padding: 1rem;
+        
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    
+    .project-modal {
+      padding: 1rem;
+      
+      .modal-content {
+        .modal-image {
+          height: 200px;
+        }
+        
+        .modal-info {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+}
+

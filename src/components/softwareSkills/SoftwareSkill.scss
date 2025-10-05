@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@import "../../_globalColor.scss";
 
 .dev-icons {
   padding-left: 0;
@@ -7,25 +7,163 @@
   margin-bottom: 0px;
   margin-top: 0px;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 120px;
+  align-items: center;
 }
 
-.software-skill-inline > i {
-  color: $subTitle;
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
-}
-.software-skill-inline > p {
+.skill-icon > i {
   color: $subTitle;
-  font-size: 10px;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
 }
-.software-skill-inline > i:hover ~ p {
+
+.skill-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-name > p {
+  color: $subTitle;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.skill-level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-level > span {
+  color: $subTitle;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.skill-experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-experience > span {
+  color: $subTitle;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.software-skill-inline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.software-skill-inline:hover .skill-icon > i {
   color: $skillsColor;
+  transform: scale(1.1);
+}
+
+.software-skill-inline:hover .skill-name > p {
+  color: $skillsColor;
+}
+
+.software-skill-inline:hover .skill-level > span {
+  color: $skillsColor;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.software-skill-inline:hover .skill-experience > span {
+  color: $skillsColor;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .dev-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .software-skill-inline {
+    padding: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    min-height: 100px;
+  }
+  
+  .skill-icon > i {
+    font-size: 2rem;
+  }
+  
+  .skill-name > p {
+    font-size: 0.8rem;
+  }
+  
+  .skill-level > span,
+  .skill-experience > span {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-icons {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .software-skill-inline {
+    padding: 0.6rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+    min-height: 80px;
+  }
+  
+  .skill-icon > i {
+    font-size: 1.8rem;
+  }
+  
+  .skill-name > p {
+    font-size: 0.7rem;
+  }
+  
+  .skill-level > span,
+  .skill-experience > span {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.3rem;
+  }
 }

@@ -10,7 +10,12 @@ import {
   openSource,
   blogSection,
   talkSection,
-  achievementSection
+  achievementSection,
+  educationInfo,
+  bigProjects,
+  githubProjectsSection,
+  youtubeSection,
+  aiGallerySection
 } from "../../portfolio";
 
 function Header() {
@@ -21,6 +26,11 @@ function Header() {
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
+  const viewEducation = educationInfo.display;
+  const viewProjects = bigProjects.display;
+  const viewGitHub = githubProjectsSection.display;
+  const viewYouTube = youtubeSection.display;
+  const viewAIGallery = aiGallerySection.display;
 
   return (
     <Headroom>
@@ -32,11 +42,22 @@ function Header() {
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label
-          className="menu-icon"
+          className="menu-icon multi-identity-menu-btn"
           htmlFor="menu-btn"
-          style={{color: "white"}}
         >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
+          <div className="menu-orb">
+            <div className="orb-ring">
+              <div className="identity-dots">
+                <div className="dot data-science-dot"></div>
+                <div className="dot musician-dot"></div>
+                <div className="dot footballer-dot"></div>
+                <div className="dot nationalist-dot"></div>
+              </div>
+            </div>
+            <div className="orb-center">
+              <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
+            </div>
+          </div>
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
@@ -44,14 +65,19 @@ function Header() {
               <a href="#skills">Skills</a>
             </li>
           )}
-          {viewExperience && (
+          {viewEducation && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#education">Education</a>
             </li>
           )}
-          {viewOpenSource && (
+          {viewExperience && (
             <li>
-              <a href="#opensource">Open Source</a>
+              <a href="#experience">Experience</a>
+            </li>
+          )}
+          {viewProjects && (
+            <li>
+              <a href="#projects">Projects</a>
             </li>
           )}
           {viewAchievement && (
@@ -69,8 +95,23 @@ function Header() {
               <a href="#talks">Talks</a>
             </li>
           )}
+          {viewGitHub && (
+            <li>
+              <a href="#github">GitHub</a>
+            </li>
+          )}
+          {viewYouTube && (
+            <li>
+              <a href="#youtube">YouTube</a>
+            </li>
+          )}
+          {viewAIGallery && (
+            <li>
+              <a href="#ai-gallery">AI Gallery</a>
+            </li>
+          )}
           <li>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">Contact</a>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

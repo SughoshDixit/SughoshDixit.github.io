@@ -1,31 +1,66 @@
-@import "../../_globalColor";
+@import "../../_globalColor.scss";
 
 .social-media-div {
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .icon-button {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  position: relative;
+  display: inline-block;
 }
 
 .icon-button i {
-  color: $textColorDark;
-  border-radius: 2.6rem;
+  color: white !important;
+  border-radius: 50%;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.3rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  margin: 0 5px;
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
   position: relative;
   text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 2.6rem;
-  margin-bottom: 10px;
-  transition: 0.2s ease-in;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.icon-button:hover i {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.icon-button:hover::before {
+  width: 4rem;
+  height: 4rem;
 }
 
 .facebook i {
@@ -68,7 +103,7 @@
   background-color: $instagram;
 }
 
-/* Hover Transition */
+/* Enhanced Hover Effects */
 .twitter i:hover,
 .google i:hover,
 .gitlab i:hover,
@@ -79,12 +114,46 @@
 .stack-overflow i:hover,
 .kaggle i:hover,
 .medium i:hover {
-  background-color: $textColor;
+  background-color: $originalPurple !important;
+  transform: translateY(-3px) scale(1.1) rotate(5deg);
+}
+
+/* Dark Mode Support */
+.dark-mode .icon-button i {
+  color: white !important;
+}
+
+.dark-mode .icon-button:hover i {
+  background-color: $dataScienceBlue !important;
 }
 
 /* Media Query */
 @media (max-width: 768px) {
   .social-media-div {
-    text-align: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .icon-button i {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .icon-button:hover::before {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-media-div {
+    gap: 8px;
+  }
+  
+  .icon-button i {
+    height: 2.2rem;
+    width: 2.2rem;
+    font-size: 1rem;
   }
 }
