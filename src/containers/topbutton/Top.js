@@ -13,7 +13,7 @@ export default function Top() {
     // Reset animation after completion
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1000);
+    }, 600); // Match the footballKick animation duration
   }
 
   // When the user scrolls down 20px from the top of the document, show the button
@@ -42,30 +42,10 @@ export default function Top() {
     <button 
       onClick={TopEvent} 
       id="topButton" 
-      title="Scroll to Top - Multi-Identity Journey!"
-      className={`multi-identity-scroll-btn ${isVisible ? 'visible' : ''} ${isAnimating ? 'animating' : ''}`}
+      title="Scroll to Top - Football Style!"
+      className={`football-scroll-btn ${isVisible ? 'visible' : ''} ${isAnimating ? 'animating' : ''}`}
     >
-      <div className="identity-orb">
-        <div className="orb-core">
-          <div className="identity-icons">
-            <div className="icon data-science-icon">🧠</div>
-            <div className="icon musician-icon">🎵</div>
-            <div className="icon footballer-icon">⚽</div>
-            <div className="icon nationalist-icon">🇮🇳</div>
-          </div>
-          <div className="orb-center">
-            <div className="center-symbol">↑</div>
-          </div>
-        </div>
-        <div className="orb-ring"></div>
-        <div className="orb-glow"></div>
-      </div>
-      <div className="particle-effects">
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
-      </div>
+      <div className="football-icon"></div>
     </button>
   );
 }

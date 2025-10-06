@@ -1,6 +1,6 @@
 @import "../../_globalColor.scss";
 
-.multi-identity-scroll-btn {
+.football-scroll-btn {
   position: fixed;
   bottom: 30px;
   right: 120px;
@@ -10,412 +10,156 @@
   background: transparent;
   cursor: pointer;
   padding: 0;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   visibility: hidden;
   opacity: 0;
-  transform: scale(0.8) rotate(0deg);
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(0.8);
+  transition: all 0.3s ease;
   overflow: visible;
 }
 
-.multi-identity-scroll-btn.visible {
+.football-scroll-btn.visible {
   visibility: visible;
   opacity: 1;
-  transform: scale(1) rotate(0deg);
+  transform: scale(1);
 }
 
-.multi-identity-scroll-btn:hover {
-  transform: scale(1.15) rotate(5deg);
+.football-scroll-btn:hover {
+  transform: scale(1.1);
 }
 
-.multi-identity-scroll-btn:active {
-  transform: scale(0.95) rotate(-2deg);
+.football-scroll-btn:active {
+  transform: scale(0.95);
 }
 
-.multi-identity-scroll-btn.animating {
-  animation: identityPulse 1.2s ease-out;
+.football-scroll-btn.animating {
+  animation: footballKick 0.6s ease-out;
 }
 
-@keyframes identityPulse {
+@keyframes footballKick {
   0% {
     transform: scale(1) rotate(0deg);
   }
-  25% {
-    transform: scale(1.3) rotate(10deg);
-  }
   50% {
-    transform: scale(1.1) rotate(-5deg);
-  }
-  75% {
-    transform: scale(1.25) rotate(8deg);
+    transform: scale(1.2) rotate(-15deg);
   }
   100% {
     transform: scale(1) rotate(0deg);
   }
 }
 
-.identity-orb {
-  position: relative;
+.football-icon {
   width: 100%;
   height: 100%;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.orb-core {
   position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(248, 249, 250, 0.95) 100%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
   box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.15),
-    inset 0 2px 10px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 2px 5px rgba(255, 255, 255, 0.8);
+  border: 2px solid #333;
+  transition: all 0.3s ease;
 }
 
-.orb-ring {
+.football-icon::before {
+  content: '⚽';
+  font-size: 24px;
+  animation: footballSpin 3s linear infinite;
+}
+
+@keyframes footballSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.football-icon::after {
+  content: '';
   position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    $dataScienceBlue 0deg,
-    $originalPurple 90deg,
-    $musicianGold 180deg,
-    $footballGreen 270deg,
-    $dataScienceBlue 360deg
-  );
-  z-index: 2;
-  animation: rotateRing 4s linear infinite;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes rotateRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.orb-glow {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  right: -15px;
-  bottom: -15px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 122, 204, 0.3) 0%,
-    rgba(85, 25, 139, 0.2) 25%,
-    rgba(255, 215, 0, 0.2) 50%,
-    rgba(34, 139, 34, 0.2) 75%,
-    transparent 100%
-  );
-  z-index: 1;
-  animation: glowPulse 3s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { 
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% { 
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
-
-.identity-icons {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-}
-
-.icon {
-  position: absolute;
-  font-size: 1.2rem;
-  animation: iconFloat 3s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.data-science-icon {
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 0s;
-}
-
-.musician-icon {
   top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-  animation-delay: 0.75s;
-}
-
-.footballer-icon {
-  bottom: 5px;
   left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 1.5s;
-}
-
-.nationalist-icon {
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  animation-delay: 2.25s;
-}
-
-@keyframes iconFloat {
-  0%, 100% { 
-    transform: translateX(-50%) translateY(0px) scale(1);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateX(-50%) translateY(-3px) scale(1.1);
-    opacity: 1;
-  }
-}
-
-.nationalist-icon {
-  animation: iconFloatRight 3s ease-in-out infinite;
-}
-
-@keyframes iconFloatRight {
-  0%, 100% { 
-    transform: translateY(-50%) translateX(0px) scale(1);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-50%) translateX(-3px) scale(1.1);
-    opacity: 1;
-  }
-}
-
-.musician-icon {
-  animation: iconFloatLeft 3s ease-in-out infinite;
-}
-
-@keyframes iconFloatLeft {
-  0%, 100% { 
-    transform: translateY(-50%) translateX(0px) scale(1);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-50%) translateX(3px) scale(1.1);
-    opacity: 1;
-  }
-}
-
-.orb-center {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.center-symbol {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: $originalPurple;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  animation: symbolBounce 2s ease-in-out infinite;
-}
-
-@keyframes symbolBounce {
-  0%, 100% { 
-    transform: translateY(0px) scale(1);
-  }
-  50% { 
-    transform: translateY(-2px) scale(1.1);
-  }
-}
-
-.particle-effects {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: 2px solid #333;
   border-radius: 50%;
-  animation: particleFloat 4s ease-in-out infinite;
+  opacity: 0.3;
+  animation: footballPulse 2s ease-in-out infinite;
 }
 
-.particle-1 {
-  background: $dataScienceBlue;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.particle-2 {
-  background: $originalPurple;
-  top: 30%;
-  right: 15%;
-  animation-delay: 1s;
-}
-
-.particle-3 {
-  background: $musicianGold;
-  bottom: 25%;
-  left: 20%;
-  animation-delay: 2s;
-}
-
-.particle-4 {
-  background: $footballGreen;
-  bottom: 15%;
-  right: 10%;
-  animation-delay: 3s;
-}
-
-@keyframes particleFloat {
+@keyframes footballPulse {
   0%, 100% {
-    transform: translateY(0px) scale(0.8);
-    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
   }
   50% {
-    transform: translateY(-20px) scale(1.2);
-    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.6;
   }
 }
 
-/* Hover Effects */
-.multi-identity-scroll-btn:hover .orb-ring {
-  animation-duration: 1s;
-}
-
-.multi-identity-scroll-btn:hover .orb-glow {
-  animation-duration: 1.5s;
-}
-
-.multi-identity-scroll-btn:hover .icon {
-  animation-duration: 1.5s;
-}
-
-.multi-identity-scroll-btn:hover .particle {
-  animation-duration: 2s;
-}
-
-.multi-identity-scroll-btn:hover .center-symbol {
-  animation-duration: 1s;
-  color: $dataScienceBlue;
-}
-
-/* Dark Mode Support */
-.dark-mode .orb-core {
-  background: linear-gradient(135deg, 
-    rgba(26, 26, 26, 0.95) 0%,
-    rgba(33, 37, 41, 0.95) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.2);
+.football-scroll-btn:hover .football-icon {
   box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.3),
-    inset 0 2px 10px rgba(255, 255, 255, 0.1);
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 2px 5px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
 }
 
-.dark-mode .center-symbol {
-  color: $dataScienceBlue;
+.football-scroll-btn:hover .football-icon::before {
+  animation-duration: 1s;
 }
 
-.dark-mode .orb-glow {
-  background: radial-gradient(
-    circle,
-    rgba(0, 122, 204, 0.4) 0%,
-    rgba(85, 25, 139, 0.3) 25%,
-    rgba(255, 215, 0, 0.3) 50%,
-    rgba(34, 139, 34, 0.3) 75%,
-    transparent 100%
-  );
+/* Dark mode support */
+.dark-mode .football-icon {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-color: #ecf0f1;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.4),
+    inset 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .football-icon::after {
+  border-color: #ecf0f1;
+}
+
+.dark-mode .football-scroll-btn:hover .football-icon {
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    inset 0 2px 5px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .multi-identity-scroll-btn {
+  .football-scroll-btn {
     bottom: 20px;
     right: 90px;
-    width: 70px;
-    height: 70px;
-  }
-
-  .orb-core {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon {
-    font-size: 1rem;
-  }
-
-  .center-symbol {
-    font-size: 1.5rem;
-  }
-
-  .orb-ring {
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-  }
-
-  .orb-glow {
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .multi-identity-scroll-btn {
-    bottom: 15px;
-    right: 75px;
-    width: 60px;
-    height: 60px;
-  }
-
-  .orb-core {
     width: 45px;
     height: 45px;
   }
 
-  .icon {
-    font-size: 0.9rem;
+  .football-icon::before {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .football-scroll-btn {
+    bottom: 15px;
+    right: 75px;
+    width: 40px;
+    height: 40px;
   }
 
-  .center-symbol {
-    font-size: 1.3rem;
+  .football-icon::before {
+    font-size: 18px;
   }
 }
 
 /* Loading Animation */
-.multi-identity-scroll-btn {
+.football-scroll-btn {
   opacity: 0;
   animation: buttonFadeIn 1s ease-out 0.5s forwards;
 }
@@ -423,10 +167,10 @@
 @keyframes buttonFadeIn {
   from { 
     opacity: 0;
-    transform: scale(0.5) rotate(-180deg);
+    transform: scale(0.5) translateY(20px);
   }
   to { 
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) translateY(0);
   }
 }
