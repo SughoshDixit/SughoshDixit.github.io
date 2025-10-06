@@ -19,6 +19,15 @@ code {
 html,
 body {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Disable smooth scroll on mobile for better performance */
+@media (max-width: 768px) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
 }
 body {
   margin: 0;

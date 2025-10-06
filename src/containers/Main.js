@@ -20,6 +20,7 @@ import ContactForm from "../components/contactForm/ContactForm";
 import AnimatedSkills from "../components/animatedSkills/AnimatedSkills";
 import ProjectShowcase from "../components/projectShowcase/ProjectShowcase";
 import IdentityCards from "../components/identityCards/IdentityCards";
+import Chatbot from "../components/chatbot/Chatbot";
 import {splashScreen, youtubeSection, aiGallerySection, skillsSection, bigProjects, githubProjectsSection, greeting} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
@@ -74,6 +75,7 @@ const Main = () => {
             <Profile />
             <Footer />
             <ScrollToTopButton />
+            <Chatbot />
           </>
         )}
       </StyleProvider>

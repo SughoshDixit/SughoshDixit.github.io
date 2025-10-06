@@ -1,0 +1,436 @@
+@import "../../_globalColor.scss";
+
+.chatbot-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $originalPurple 0%, $dataScienceBlue 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(85, 25, 139, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(85, 25, 139, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.open {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    box-shadow: 0 4px 20px rgba(244, 67, 54, 0.3);
+  }
+
+  .chat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .chat-label {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  &:hover .chat-label {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.chatbot-window {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 380px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.3s ease;
+  z-index: 999;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chatbot-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, $originalPurple 0%, $dataScienceBlue 100%);
+  border-radius: 20px 20px 0 0;
+  color: white;
+
+  .bot-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .bot-avatar {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .bot-details {
+      h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .status {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &::before {
+          content: '';
+          width: 6px;
+          height: 6px;
+          background: #4caf50;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #f8f9fa;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(85, 25, 139, 0.3);
+    border-radius: 2px;
+  }
+
+  .message {
+    display: flex;
+    margin-bottom: 10px;
+
+    &.user {
+      justify-content: flex-end;
+
+      .message-content {
+        background: linear-gradient(135deg, $originalPurple 0%, $dataScienceBlue 100%);
+        color: white;
+        border-radius: 18px 18px 4px 18px;
+      }
+    }
+
+    &.bot {
+      justify-content: flex-start;
+
+      .message-content {
+        background: white;
+        color: #333;
+        border-radius: 18px 18px 18px 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .message-content {
+      max-width: 80%;
+      padding: 12px 16px;
+      position: relative;
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .message-time {
+        font-size: 0.7rem;
+        opacity: 0.7;
+        display: block;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 0;
+
+    span {
+      width: 6px;
+      height: 6px;
+      background: #999;
+      border-radius: 50%;
+      animation: typing 1.4s infinite ease-in-out;
+
+      &:nth-child(1) { animation-delay: -0.32s; }
+      &:nth-child(2) { animation-delay: -0.16s; }
+      &:nth-child(3) { animation-delay: 0s; }
+    }
+  }
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.chatbot-input {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 0 0 20px 20px;
+
+  .input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .message-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 25px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $originalPurple;
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    .send-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $originalPurple 0%, $dataScienceBlue 100%);
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(85, 25, 139, 0.3);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+// Dark mode support
+.dark-mode {
+  .chatbot-window {
+    background: #2c3e50;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .chatbot-messages {
+    background: #34495e;
+
+    .message.bot .message-content {
+      background: #2c3e50;
+      color: white;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .chatbot-input {
+    background: #2c3e50;
+
+    .message-input {
+      background: #34495e;
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+
+      &:focus {
+        border-color: $originalPurple;
+      }
+
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .chatbot-toggle {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+    .chat-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .chat-label {
+      display: none;
+    }
+  }
+
+  .chatbot-window {
+    bottom: 80px;
+    right: 20px;
+    left: 20px;
+    width: auto;
+    height: 450px;
+  }
+
+  .chatbot-header {
+    padding: 15px;
+
+    .bot-info {
+      gap: 10px;
+
+      .bot-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+
+      .bot-details h4 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .chatbot-messages {
+    padding: 15px;
+    gap: 12px;
+
+    .message .message-content {
+      max-width: 85%;
+      padding: 10px 14px;
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .chatbot-input {
+    padding: 15px;
+
+    .input-container {
+      gap: 8px;
+
+      .message-input {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+
+      .send-button {
+        width: 35px;
+        height: 35px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-window {
+    height: 400px;
+  }
+
+  .chatbot-messages {
+    padding: 12px;
+  }
+
+  .chatbot-input {
+    padding: 12px;
+  }
+}
