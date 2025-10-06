@@ -348,11 +348,24 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/paniit.png"),
-      projectName: "Alphers - Education Monitoring",
-      projectDesc: "AI-powered early age education monitoring application that tracks learning progress and provides personalized recommendations.",
-      category: "EdTech",
-      technologies: ["React Native", "Python", "TensorFlow", "Firebase", "Machine Learning"],
+      image: require("./assets/images/oracle.jfif"),
+      projectName: "Oracle Financial Crime and Compliance",
+      projectDesc: "Comprehensive financial crime detection and compliance monitoring system using advanced analytics and machine learning to identify suspicious activities and ensure regulatory compliance.",
+      category: "Financial Technology",
+      technologies: ["Oracle Analytics", "Python", "Machine Learning", "SQL", "Oracle Cloud"],
+      footerLink: [
+        {
+          name: "Learn More",
+          url: "https://oracle.com/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/oracle.jfif"),
+      projectName: "ML4AML",
+      projectDesc: "Machine Learning for Anti-Money Laundering - An advanced AI-powered platform that uses deep learning algorithms to detect and prevent money laundering activities in real-time.",
+      category: "Anti-Money Laundering",
+      technologies: ["Python", "TensorFlow", "Deep Learning", "Apache Spark", "Kafka"],
       footerLink: [
         {
           name: "View Project",
