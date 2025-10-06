@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f431230.css",
+    "main.css": "/static/css/main.dd2365f5.css",
     "main.js": "/static/js/main.0fb3d63a.js",
     "static/css/64.b1d387d9.chunk.css": "/static/css/64.b1d387d9.chunk.css",
     "static/js/64.05ba30d3.chunk.js": "/static/js/64.05ba30d3.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/siemens.jfif": "/static/media/siemens.f5d912d5e90c61988c86.jfif",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.7f431230.css.map": "/static/css/main.7f431230.css.map",
+    "main.dd2365f5.css.map": "/static/css/main.dd2365f5.css.map",
     "main.0fb3d63a.js.map": "/static/js/main.0fb3d63a.js.map",
     "64.b1d387d9.chunk.css.map": "/static/css/64.b1d387d9.chunk.css.map",
     "64.05ba30d3.chunk.js.map": "/static/js/64.05ba30d3.chunk.js.map",
@@ -27,7 +27,7 @@
     "769.d3777a7b.chunk.js.map": "/static/js/769.d3777a7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f431230.css",
+    "static/css/main.dd2365f5.css",
     "static/js/main.0fb3d63a.js"
   ]
 }

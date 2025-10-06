@@ -90,6 +90,8 @@
   box-shadow: 
     0 10px 30px rgba(0, 0, 0, 0.1),
     0 1px 8px rgba(0, 0, 0, 0.05);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .identity-card:hover {
@@ -106,6 +108,10 @@
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.2),
     0 0 0 4px rgba(var(--card-color-rgb), 0.2);
+}
+
+.identity-card:active {
+  transform: translateY(-5px) scale(1.02);
 }
 
 .card-background {
@@ -324,6 +330,18 @@
   max-width: 800px;
   margin: 50px auto 0;
   padding: 0 20px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .details-container {
