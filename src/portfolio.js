@@ -24,7 +24,7 @@ const greeting = {
   username: "Sughosh Dixit",
   title: "नमस्ते, Sughosh here",
   subTitle: emoji(
-    "🧠 Data Scientist at Oracle Financial Crime & Compliance | 🎵 Bhajan Singer & Patriotic Music Enthusiast | ⚽ Passionate Footballer & Liverpool FC Devotee | 🇮🇳 Proud Indian Nationalist & Civilizational Heritage Advocate | 🎓 Masters in Data Science from BITS Pilani | Building AI-driven solutions while preserving Bharatiya culture & values 🌏🏆"
+    "🧠 Senior Data Scientist - Product at Oracle Financial Crime & Compliance | 🎵 Bhajan Singer & Patriotic Music Enthusiast | ⚽ Passionate Footballer & Liverpool FC Devotee | 🇮🇳 Proud Indian Nationalist & Civilizational Heritage Advocate | 🎓 Masters in Data Science from BITS Pilani | Building AI-driven solutions while preserving Bharatiya culture & values 🌏🏆"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1Do_Aj8ruhq64P7Enq4giaJhtXpRcsHG2/view?usp=drive_link", // Set to empty to hide the button
@@ -36,16 +36,16 @@ const greeting = {
     identities: [
       {
         icon: "🧠",
-        title: "Data Scientist",
-        description: "Transforming data into insights at Oracle Financial Crime & Compliance",
+        title: "Senior Data Scientist",
+        description: "Leading ML4AML product development at Oracle Financial Crime & Compliance",
         color: "#007ACC",
-        experience: "4+",
+        experience: "6+",
         level: "Expert",
         progress: 95,
         tags: ["AI/ML", "Python", "SQL", "Analytics"],
         achievements: [
-          "Built ML models for fraud detection",
-          "Led data extraction for Oracle Cloud HCM",
+          "Promoted to Senior Data Scientist (Product) at Oracle",
+          "Built ML models for fraud detection & Anti-Money Laundering",
           "Masters in Data Science from BITS Pilani"
         ],
         currentFocus: "Developing advanced AI models for financial crime prevention and anti-money laundering systems",
@@ -109,7 +109,7 @@ const greeting = {
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/SughoshDixit9",
+  github: "https://github.com/SughoshDixit",
   linkedin: "https://www.linkedin.com/in/sughosh-dixit/",
   gmail: "sughoshpdixit@gmail.com",
   gitlab: "https://gitlab.com/sughoshpdixit",
@@ -125,10 +125,10 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "My Four Pillars of Identity",
-  subTitle: "🧠 Data Scientist | 🎵 Musician | ⚽ Footballer | 🇮🇳 Indian Nationalist",
+  subTitle: "🧠 Senior Data Scientist | 🎵 Musician | ⚽ Footballer | 🇮🇳 Indian Nationalist",
   skills: [
     emoji(
-      "🧠 Data Scientist - Transforming complex data into actionable insights at Oracle Financial Crime & Compliance using AI/ML"
+      "🧠 Senior Data Scientist - Leading ML4AML product development at Oracle Financial Crime & Compliance using AI/ML"
     ),
     emoji(
       "🎵 Musician - Devotional singer performing bhajans and patriotic songs, preserving Bharatiya musical traditions"
@@ -255,40 +255,51 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Web Development intern",
-      company: "Printalytix",
-      companylogo: require("./assets/images/printalytix.png"),
-      date: "July 2018 – September 2018",
-      desc: "Worked as a design intern, participated as a guide along with senior colleagues at the aforementioned company, at Workbench Projects,Bangalore in a national level innovation competition organized by Niti-Ayog",
-      descBullets: [
-        "Contributed in designing BPMN (Business Process Modelling and Notation) for various different scenarios",
-        "Learnt how to operate an FDM 3-D printer, learnt their working to produce some prototypes"
-      ]
-    },
-    {
-      role: "Full Stack Developer Intern",
-      company: "Siemens",
-      companylogo: require("./assets/images/siemens.jfif"),
-      date: "February 2020 – May 2020",
-      desc: "Worked on a Live Lead Gen Project - 'Project Chanakya'"
-    },
-    {
-      role: "Senior Technical Cloud Analyst",
-      company: "Oracle",
+      role: "Senior Data Scientist",
+      company: "Oracle Financial Crime and Compliance Management",
       companylogo: require("./assets/images/oracle.jfif"),
-      date: "September 2020 – September 2024",
-      desc: "Led Data Extraction and SQL Reports for Oracle Cloud HCM projects"
+      date: "October 2026 – Present",
+      desc: "Leading ML4AML product development and scaling machine learning models for Anti-Money Laundering and financial crime detection.",
+      descBullets: [
+        "Architecting production ML pipelines for financial crime risk analytics",
+        "Driving product strategy and model governance across FCCM"
+      ]
     },
     {
       role: "Data Scientist",
       company: "Oracle Financial Crime and Compliance Management",
       companylogo: require("./assets/images/oracle.jfif"),
-      date: "October 2024 – Present",
+      date: "September 2024 – October 2026",
       desc: "Building Machine Learning models to combat financial crimes and optimize Anti-Money Laundering efforts. 🌐💼",
       descBullets: [
         "Analyzing financial data for fraud detection",
         "Developing predictive models to detect suspicious transactions",
         "Collaborating with cross-functional teams for risk mitigation"
+      ]
+    },
+    {
+      role: "Cloud Consultant",
+      company: "Oracle",
+      companylogo: require("./assets/images/oracle.jfif"),
+      date: "September 2020 – September 2024",
+      desc: "Led Data Extraction, SQL/PLSQL BI Reports, Oracle APEX apps, and Oracle Digital Assistant chatbots for Oracle Cloud HCM clients"
+    },
+    {
+      role: "Full Stack Developer Intern",
+      company: "Siemens Technology India",
+      companylogo: require("./assets/images/siemens.jfif"),
+      date: "February 2020 – May 2020",
+      desc: "Worked on Lead Gen Demand Planning ('Project Chanakya') and OCR Supply Chain billing automation using Flask, SQLAlchemy, and MSSQL"
+    },
+    {
+      role: "Web & Software Developer Intern",
+      company: "Printalytix Private Limited",
+      companylogo: require("./assets/images/printalytix.png"),
+      date: "July 2018 – August 2018 & Jan – Feb 2020",
+      desc: "Worked on web development and as a design intern at Workbench Projects, Bangalore for a NITI Aayog national innovation competition",
+      descBullets: [
+        "Contributed in designing BPMN (Business Process Modelling and Notation) for various scenarios",
+        "Operated FDM 3D printers to produce prototypes"
       ]
     }
   ]
@@ -369,7 +380,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "View Project",
-          url: "https://github.com/SughoshDixit9"
+          url: "https://github.com/SughoshDixit"
         }
       ]
     }
@@ -419,6 +430,28 @@ const achievementSection = {
         {name: "Memories", 
          url: "https://drive.google.com/file/d/1b0gMXkVoNRCR4au2hVUcAXOCoWH1h_9E/view"}
       ]
+    },
+    {
+      title: "OCI 2024 Generative AI Certified Professional",
+      subtitle: "Oracle Cloud Infrastructure Generative AI & AI Foundations Certifications",
+      image: require("./assets/images/oracle.jfif"),
+      footerLink: [
+        {
+          name: "LinkedIn Profile",
+          url: "https://www.linkedin.com/in/sughosh-dixit/details/certifications/"
+        }
+      ]
+    },
+    {
+      title: "SIH External Jury & Industry Examiner",
+      subtitle: "External Jury Member for Smart India Hackathon & Examiner at Atria Institute of Technology",
+      image: require("./assets/images/BIT.jfif"),
+      footerLink: [
+        {
+          name: "Recent Activity",
+          url: "https://www.linkedin.com/in/sughosh-dixit/recent-activity/all/"
+        }
+      ]
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -433,38 +466,38 @@ const blogSection = {
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://sughoshblog.vercel.app/blogs/gratitude-for-being-born-in-the-ancient-civilization-of-bharatavarsha",
-      title: "Gratitude for Being Born in the Ancient Civilization of Bharatavarsha",
+      url: "https://sughoshdixit.com/blogs/the-matriarch-of-grit-a-heartfelt-tribute-to-my-ajji-vanamala-dixit",
+      title: "The Matriarch of Grit: A Heartfelt Tribute to My Ajji, Vanamala Dixit",
       description:
-        "Starting with gratitude by giving salutations to Lord Ganesha - reflections on our rich civilizational heritage."
+        "The life story of Vanamala Dixit—my grandmother, my mentor, and the true architect of our family."
     },
     {
-      url: "https://sughoshblog.vercel.app/blogs/reflections-from-the-akhila-bharateeya-pratinidhi-sabha-2025",
-      title: "Reflections from the Akhila Bharateeya Pratinidhi Sabha 2025",
+      url: "https://sughoshdixit.com/blogs/dr.-vinayak-damodar-savarkar-the-underrated-colossus-of-bharat's-freedom-struggle",
+      title: "Dr. Vinayak Damodar Savarkar — The Underrated Colossus of Bharat's Freedom Struggle",
       description:
-        "My experience at the 100th year of RSS as a Prabandhak - insights on leadership and service."
+        "A deep dive into the revolutionary life, intellect, and enduring legacy of Veer Savarkar."
     },
     {
-      url: "https://sughoshblog.vercel.app/blogs/a-heartfelt-ode-and-a-tribute-to-ajjju",
-      title: "A heartfelt Ode and a Tribute to Ajjju",
+      url: "https://sughoshdixit.com/blogs/titan's-horological-revolution-business-strategy-lessons-from-xerxes-desai-and-jrd-tata",
+      title: "Titan's Horological Revolution: Business Strategy Lessons from Xerxes Desai & JRD Tata",
       description:
-        "Lifestory of Ajju - a touching tribute to a beloved grandfather and brave heart."
+        "Reflections on building Titan from scratch into a world-class, affordable Indian watchmaker."
     },
     {
-      url: "https://sughoshblog.vercel.app/blogs/india-in-a-shifting-global-order-book-notes",
-      title: "India in a Shifting Global Order — Book Notes",
-      description:
-        "A blurb of a book on the Indian Perspective in the current world - insights on geopolitics and foreign policy."
-    },
-    {
-      url: "https://sughoshblog.vercel.app/blogs/five-years-at-oracle:-from-cloud-analyst-to-data-scientist",
+      url: "https://sughoshdixit.com/blogs/five-years-at-oracle-from-cloud-analyst-to-data-scientist",
       title: "Five Years at Oracle: From Cloud Analyst to Data Scientist",
       description:
         "My journey at Oracle from being a fresh hire to becoming a Data Scientist - career milestones and growth."
     },
     {
-      url: "https://sughoshdixit.blogspot.com/p/being-ardent-liverpool-fan-i-can-tell.html",
-      title: "Do you watch football?",
+      url: "https://sughoshdixit.com/blogs/a-heartfelt-ode-and-a-tribute-to-ajju",
+      title: "A Heartfelt Ode and a Tribute to Ajju",
+      description:
+        "Lifestory of Ajju - a touching tribute to a beloved grandfather and brave heart."
+    },
+    {
+      url: "https://sughoshdixit.com/blogs/why-support-liverpool-f.c-the-beautiful-game-vs-the-lazy-game",
+      title: "Why Support Liverpool F.C? The Beautiful Game vs The Lazy Game",
       description:
         "A reflection on why I chose to support Liverpool, even when they weren't at their peak."
     }
